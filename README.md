@@ -21,6 +21,9 @@ Projeto Spring Boot de exemplo com PostgreSQL via Docker, pronto para execução
 
 O JAR compilado está disponível na aba [Releases](https://github.com/gmorais-dev/Desafio-mini-mundo/releases).
 
+link do swagge : 
+http://localhost:8081/swagger-ui/index.html#/
+
 ### Baixar o JAR
 
 ```bash
