@@ -48,19 +48,16 @@ public class MercadoriaService {
         log.info("Mercadoria atualizada: {}", atualizado.getNome());
         return mapper.toDto(atualizado);
     }
-
     public List<MercadoriaDto> listarTodos() {
         return repository.findAll()
                 .stream()
                 .map(mapper::toDto)
                 .collect(Collectors.toList());
     }
-
     public MercadoriaDto buscarPorId(Long id) {
         Mercadoria mercadoria = repository.findById(id).orElseThrow(() -> new NotFoundException("Mercadoria não encontrada com id: " + id));
         return mapper.toDto(mercadoria);
     }
-
     public void deletar(Long id) {
         Mercadoria mercadoria = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Mercadoria não encontrada com id: " + id));

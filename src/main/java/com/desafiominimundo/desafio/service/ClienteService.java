@@ -26,7 +26,6 @@ public class ClienteService {
     private final ClienteMapper mapper;
     private final ClienteValidator validator;
 
-
     public ClienteDto cadastrarCliente(ClienteDto dto) {
         validator.validar(dto);
         if (repository.existsByCpfOuCnpj(dto.getCpfOuCnpj())) {

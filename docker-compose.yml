@@ -1,5 +1,4 @@
 version: '3.9'
-
 services:
   db:
     image: postgres:15
@@ -11,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data"
 
   app:
     build: .
@@ -22,6 +21,10 @@ services:
       - db
     environment:
       SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
 
 volumes:
   pgdata:
